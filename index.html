@@ -11,10 +11,17 @@
 
     <style>
       .accordion {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+       display: flex;
+            flex-direction: row; /* По умолчанию элементы располагаются в ряд */
+            justify-content: space-between;
+            align-items: center;
       }
+
+        @media (max-width: 600px) {
+            .accordion {
+                flex-direction: column; /* На мобильных устройствах элементы располагаются в колонку */
+            }
+        }
       .accordion-content {
         margin-top: 10px;
       }
